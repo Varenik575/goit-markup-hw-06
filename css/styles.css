@@ -121,7 +121,16 @@ body { /*BODY*/
     padding-right: 15px;
 }
 
-
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
 
 /*----------------------- logo stuff ----------------*/
 
@@ -212,7 +221,6 @@ body { /*BODY*/
 }
 
 .nav-link:hover, .nav-link:focus {
-    outline: none;
     color: var(--pressed);
 }
 
@@ -228,12 +236,10 @@ body { /*BODY*/
 }
 
 .mail-link:hover, .mail-link:focus {
-    outline: none;
     color: var(--pressed);
 }
 
 .tel-link:hover, .tel-link:focus {
-    outline: none;
     color: var(--pressed);
 }
 
@@ -408,7 +414,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 .media-icon-background:hover, 
 .media-icon-background:focus {
-    outline: none;
     background-color: var(--pressed);
 }
 
@@ -690,6 +695,12 @@ padding-bottom: 120px;
 
 
 .modal {
+
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 72px;
+    padding-bottom: 24px;
+    
     position: absolute;
     z-index: 10;
     top: 50%;
@@ -764,3 +775,180 @@ padding-bottom: 120px;
     fill: var(--white);
 }
 
+/*-----------------------------------------------------modal form stuff------------*/
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--dark);
+}
+
+.field-desc {
+    display: block;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: var(--subtle-text);
+
+}
+
+.field-container {
+    display: block;
+    position: relative;
+}
+
+.field-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
+    width: 18px;
+    height: 24px;
+    fill: var(--dark);
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+
+    border: 1px solid rgba(46, 47, 66, 0.2);
+    border-radius: 4px;
+
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.17;
+    font-weight: 400;
+    outline: none;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+
+}
+
+.modal-form-input:focus {
+
+    border-color: var(--primary-brand);
+}
+
+.modal-form-input:focus + .field-icon {
+
+    fill: var(--primary-brand);
+
+}
+
+.modal-form-comment {
+    padding-left: 16px;
+    padding-top: 8px;
+
+    width: 100%;
+    height: 120px;
+
+    resize: none;
+
+    border: 1px solid rgba(46, 47, 66, 0.2);
+    border-radius: 4px;
+    outline: none;
+
+    font-size: 18px;
+    line-height: 1.17;
+    font-weight: 400;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-comment:focus {
+    border-color: var(--primary-brand);
+}
+
+.modal-form-comment::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: 400;
+}
+
+.checkbox-desc {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--subtle-text);
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--dark);
+    border-radius: 2px;
+    
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.checkbox-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.policy-checkbox:checked + .custom-checkbox{
+    background-color: var(--pressed);
+}
+
+.policy-checkbox:focus + .custom-checkbox{
+    background-color: var(--pressed);
+}
+
+.link {
+    text-decoration: underline;
+    color: var(--primary-brand);
+}
+
+.form-button-container {
+    display: flex;
+    justify-content: center;
+}
+.form-submit-button {
+    margin-top: 24px;
+    background-color: var(--primary-brand);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 64px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.5;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    color: var(--white);
+}
+
+.form-submit-button:hover, .form-submit-button:focus {
+    background-color: var(--pressed);
+}
