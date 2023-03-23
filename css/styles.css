@@ -513,7 +513,7 @@ height: 88px;
    width: 208px;
 }
 
-.media-title {
+.footer-section-title {
     color: var(--white);
     font-weight: 500;
     margin-bottom: 16px;
@@ -549,6 +549,56 @@ height: 88px;
     width: 24px;
     height: 24px;
     fill: var(--light);
+}
+
+.footer-subscription-form {
+    display: flex;
+    align-items: end;
+    margin-left: 80px;
+}
+
+.footer-form-field {
+    height: 40px;
+    width: 264px;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    margin-right: 24px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 200%;
+    color: var(--white);
+    padding-left: 16px;
+}
+
+.footer-form-field::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 200%;
+    color: var(--white);
+}
+
+.subscription-button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 165px;
+    background-color: var(--primary-brand);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 4px;
+    border: none;
+    padding: 8px 24px;
+}
+
+.footer-button-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--white);
+    margin-left: 16px;
 }
 
 /*========================PORTFOLIO========================*/
@@ -902,24 +952,39 @@ padding-bottom: 120px;
     justify-content: center;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--dark);
+    border: 1px solid var(--subtle-text);
     border-radius: 2px;
     
     cursor: pointer;
     margin-right: 8px;
+
+    transition-property: border-color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox-icon {
     width: 10px;
     height: 10px;
+    opacity: 0;
+    fill: var(--light);
+
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .policy-checkbox:checked + .custom-checkbox{
     background-color: var(--pressed);
 }
 
+.policy-checkbox:checked + .custom-checkbox .checkbox-icon {
+    opacity: 1; 
+}
+
 .policy-checkbox:focus + .custom-checkbox{
-    background-color: var(--pressed);
+    outline: none;
+    border-color: var(--primary-brand);
 }
 
 .link {
